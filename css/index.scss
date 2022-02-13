@@ -1,0 +1,97 @@
+/*
+
+*/
+$MainBackground: #fff;
+$MainColor: #000;
+$SecondaryBackground: #b00303;
+$SecondaryColor: #abede0;
+
+$Title: 50px;
+
+
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.Bookstore_Title > h1{
+    text-align: center;
+    margin-top: 20px;
+    color: transparent;
+    background: #003817;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+.Bookstore_Title > h1::after{
+    contain: "";
+    width: $Title;
+    height: 2px;
+}
+.Bookstore__SearchBar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Results{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 25px;
+    padding: 5px;
+    counter-reset: Book-result;
+}
+
+.Results__counter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Results__counter > div{
+   margin-right: 30px;
+}
+
+@media only screen and (max-width: 1265px){
+
+
+
+    .Results > .Results__counter::before{
+    counter-increment: Book-result;
+    content: counter(Book-result) " ";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 0;
+    height: 20%;
+    width: 40%;
+    font-size: 1.5em;
+    background-color: $SecondaryBackground;
+    color:$SecondaryColor;
+}
+}
+
+@media only screen and (min-width: 1266px){
+
+
+
+    .Results > .Results__counter::before{
+    content: " ";
+    display: block;
+
+}
+}
