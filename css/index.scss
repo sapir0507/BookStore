@@ -21,6 +21,16 @@ body{
     width: 100%;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul li{
+    list-style: none;
+  }
+
 .Bookstore_Title > h1{
     text-align: center;
     margin-top: 20px;
@@ -30,6 +40,12 @@ body{
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+.No_search > h4{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
 }
 .Bookstore_Title > h1::after{
@@ -42,6 +58,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .Results{
     display: flex;
     justify-content: center;
@@ -55,11 +72,22 @@ body{
     counter-reset: Book-result;
 }
 
+ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .Results__counter{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
 
 }
 
@@ -70,10 +98,17 @@ body{
 @media only screen and (max-width: 1265px){
 
     .col-md-4 > img{
-        $container_hight: $container_hight*1.5;
+        $container_hight: $container_hight*1.01;
         $container_width: 100%;
         height: $container_hight;
         width: $container_width;
+    }
+
+    .Results__pair{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
     
     .Results__counter{
@@ -81,9 +116,10 @@ body{
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-    
     }
-    .Results > .Results__counter::before{
+
+    
+    .Results__counter::before{
     counter-increment: Book-result;
     content: counter(Book-result) " ";
     display: flex;
@@ -102,7 +138,11 @@ body{
 
 @media only screen and (min-width: 1266px){
 
-   
+    .Results__pair{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
     .col-md-4 > img{
             height: $container_hight;
             width: $container_width;
